@@ -1,0 +1,313 @@
+@import "./resets";
+@import "./variables";
+
+// Bootstrap and Bootstrap Icons imports
+@import "../node_modules/bootstrap/scss/bootstrap.scss";
+@import "../node_modules/bootstrap-icons/font/bootstrap-icons.css";
+
+@mixin creatCard {
+  height: 100%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  background-color: rgb(227, 227, 227);
+  border: 1px solid rgba(0, 0, 0, 0.125);
+  border-radius: 9px;
+}
+
+@mixin newIconFlex {
+  display: flex;
+  flex-direction: row;
+  text-align: end;
+  position: absolute;
+}
+
+@mixin wrapText {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+}
+
+@mixin newText {
+  background-color: rgb(194, 193, 193);
+  padding-right: 10px;
+  padding-left: 10px;
+  padding-top: 4px;
+  border-radius: 50%;
+  margin-top: 8px;
+  cursor: map-get($change-cursors, inactive);
+}
+
+@mixin exclusiveNew {
+  background-color: rgb(194, 193, 193);
+  padding-right: 10px;
+  padding-left: 10px;
+  padding-top: 4px;
+  border-radius: 50%;
+  margin-top: 8px;
+  cursor: map-get($change-cursors, active);
+}
+
+@mixin xclusive {
+  background-color: rgb(194, 193, 193);
+  border-radius: 15px;
+  padding-top: 5px;
+  padding-right: 10px;
+  padding-left: 10px;
+  margin-bottom: 10px;
+  cursor: map-get($change-cursors, active);
+}
+
+/*! carousel container */
+
+.slider-class {
+  background-color: $nav-bg-color;
+}
+
+#carouselExampleControls {
+  height: 28px;
+  text-align: $content;
+  max-width: 65%;
+  padding-right: 45px;
+
+  .carousel-control-prev {
+    width: 18px;
+    height: 18px;
+    margin-top: 4px;
+  }
+
+  .carousel-control-next {
+    width: 18px;
+    height: 18px;
+    margin-top: 4px;
+    margin-right: 35px;
+  }
+}
+
+.carousel-inner {
+  text-transform: $text-upper;
+  font-size: map-get($size-fonts, medium);
+  font-weight: map-get($font-weights, light);
+  margin: 4px auto 0 auto;
+  cursor: map-get($change-cursors, inactive);
+}
+.carousel-item {
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.carousel-control-next-icon {
+  color: $nav-bg-color;
+}
+
+/*! carousel container */
+
+/*! enable-container */
+.enable-container {
+  position: absolute;
+  top: 0;
+  right: 0;
+  font-size: map-get($size-fonts, medium);
+  font-weight: map-get($font-weights, dark);
+  cursor: map-get($change-cursors, inactive);
+  &:hover {
+    .enable-class {
+      color: red;
+    }
+  }
+  & .enable-class {
+    padding-top: 4px;
+    padding-right: 35px;
+    color: white;
+  }
+}
+
+/*enable-container*/
+
+/*movado image navbar*/
+
+.navbar-container {
+  display: flex;
+  flex-direction: row;
+}
+
+.navbar-nav {
+  padding-top: 4px;
+  padding-right: 20px;
+}
+
+.navbar {
+  width: 90%;
+  & .navbar-brand {
+    font-size: 2rem;
+    padding-left: 15px;
+  }
+
+  &-nav {
+    display: flex;
+    justify-content: space-between;
+
+    & .nav-item {
+      margin-right: 10px;
+    }
+
+    &.ml-auto {
+      margin-left: auto;
+      padding: 20px;
+
+      & .nav-item {
+        margin-left: 10px;
+      }
+    }
+  }
+
+  &-collapse {
+    justify-content: center;
+    text-transform: uppercase;
+  }
+}
+
+/*movado image navbar*/
+
+/*! Arrivalbar */
+.arrival-class {
+  text-align: $content;
+  color: $text-color;
+  background-color: $nav-bg-color;
+  padding: 5rem 13rem;
+  text-transform: $text-upper;
+
+  & h1 {
+    cursor: map-get($change-cursors, active);
+  }
+}
+.title-container {
+  @include wrapText;
+}
+
+.navbar-brand-arrivals {
+  font-size: map-get($size-fonts, small);
+  font-weight: map-get($font-weights, bold);
+  text-decoration: none;
+  outline: none;
+  color: $nav-bg-color;
+  cursor: map-get($change-cursors, active);
+}
+
+.calculate-total-items {
+  font-weight: lighter;
+}
+
+/* arrival nav container*/
+.nav-container {
+  border-bottom: 3px solid rgb(232, 231, 231);
+}
+
+.filter-class {
+  font-size: map-get($size-fonts, medium);
+  padding-top: 20px;
+  padding-right: 25px;
+  cursor: map-get($change-cursors, active);
+  font-weight: map-get($font-weights, bold);
+
+  i {
+    font-weight: map-get($font-weights, bold);
+    padding-right: 5px;
+  }
+}
+/* arrival nav container*/
+
+/* card body text*/
+
+.card-title {
+  color: gray;
+  font-size: map-get($size-fonts, small);
+  cursor: map-get($change-cursors, active);
+}
+.card-text {
+  font-size: map-get($size-fonts, small);
+  cursor: map-get($change-cursors, active);
+}
+
+/* card body text*/
+
+/*image head exclusive*/
+
+.exclusive-text {
+  @include xclusive;
+
+  p {
+    padding-bottom: 5px;
+  }
+}
+
+.exclusive-class {
+  font-size: map-get($size-fonts, x-small);
+  text-transform: $text-upper;
+  text-align: $content;
+}
+
+.exclusive-container {
+  @include newIconFlex;
+  right: 5px;
+  top: 10px;
+}
+/*image head exclusive*/
+
+/*image head exclusive with new*/
+.exclusive-new-text {
+  @include newIconFlex;
+  right: 5px;
+  top: 35px;
+}
+
+.new-text-E {
+  @include exclusiveNew;
+
+  p {
+    padding-top: 10px;
+    font-weight: map-get($font-weights, darker);
+    font-size: map-get($size-fonts, small);
+    text-transform: $text-upper;
+  }
+}
+/*image head exclusive with new*/
+
+/*image head new alone*/
+
+.new-text-container {
+  @include newIconFlex;
+  right: 8px;
+  top: 10px;
+}
+
+.new-text-class {
+  @include newText;
+
+  p {
+    padding-top: 10px;
+    font-weight: map-get($font-weights, darker);
+    font-size: map-get($size-fonts, small);
+    text-transform: $text-upper;
+  }
+}
+
+/*image head new alone*/
+
+/* card style container*/
+
+.card-style {
+  @include creatCard;
+}
+
+/* card style container*/
+
+.footer1 {
+  bottom: 0;
+  position: relative;
+  text-align: $content;
+  background-color: $nav-bg-color;
+  padding: 5px;
+  margin-top: 8px;
+}
