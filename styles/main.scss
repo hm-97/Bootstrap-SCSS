@@ -11,7 +11,7 @@
   display: flex;
   flex-direction: column;
   min-width: 0;
-  background-color: rgb(227, 227, 227);
+  background-color: rgba(236, 235, 235, 0.785);
   border: 1px solid rgba(0, 0, 0, 0.125);
   border-radius: 9px;
 }
@@ -135,6 +135,10 @@
 .navbar-nav {
   padding-top: 4px;
   padding-right: 20px;
+
+  i {
+    cursor: map-get($change-cursors, active);
+  }
 }
 
 .navbar {
@@ -226,6 +230,7 @@
   cursor: map-get($change-cursors, active);
 }
 .card-text {
+  font-weight: map-get($font-weights, bold);
   font-size: map-get($size-fonts, small);
   cursor: map-get($change-cursors, active);
 }
